@@ -1,0 +1,34 @@
+<rule id="100100" level="12">
+  <decoded_as>json</decoded_as>
+  <group>local,syslog,access_control</group>
+  <field name="group">^malware</field>
+  <description>Group starting with "malware" added on Linux system</description>
+</rule>
+
+<rule id="100101" level="12">
+  <decoded_as>json</decoded_as>
+  <field name="group">^malware$</field>
+  <description>Group named "malware" added on Windows system</description>
+</rule>
+
+<rule id="100102" level="8">
+  <decoded_as>json</decoded_as>
+  <field name="service">Background Intelligent Transfer Service</field>
+  <field name="startup_type">modified</field>
+  <description>Startup type of BITS service changed on Windows system</description>
+</rule>
+
+
+<rule id="100103" level="13">
+  <decoded_as>json</decoded_as>
+  <user>root</user>
+  <password>modified</password>
+  <description>Root password changed on Linux system</description>
+</rule>
+
+
+<rule id="100104" level="10">
+  <decoded_as>json</decoded_as>
+  <field name="process_name">cmd.exe|powershell.exe</field>
+  <description>Process launched under cmd.exe or PowerShell session on Windows</description>
+</rule>
